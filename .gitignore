@@ -1,0 +1,8 @@
+# Godot specific
+/.import/
+.idea/
+/export/
+/godot/
+/*.export
+*.import
+*.godot
