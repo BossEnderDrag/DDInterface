@@ -1,0 +1,143 @@
+[gd_scene load_steps=9 format=3 uid="uid://dcldb06c7msw4"]
+
+[ext_resource type="PackedScene" uid="uid://q23gbtwt2df2" path="res://Scenes/Instances/CharacterCard.tscn" id="1_2ocmo"]
+[ext_resource type="Script" uid="uid://d02r0qi74enui" path="res://Codes/Menus/character_list.gd" id="1_n0345"]
+[ext_resource type="Script" uid="uid://d0ct56slkwwft" path="res://Classes/ThemeRect.gd" id="1_tgbdx"]
+[ext_resource type="Resource" uid="uid://b8uqw1lq3n62v" path="res://Ressources/TestCharacter.tres" id="2_ho18t"]
+[ext_resource type="PackedScene" uid="uid://ddmbd3pfgpqp0" path="res://Scenes/Instances/CharacterName.tscn" id="3_xgy0k"]
+[ext_resource type="PackedScene" uid="uid://dnrs4pxk80evu" path="res://Scenes/Instances/SceneButton.tscn" id="5_y7dx0"]
+[ext_resource type="PackedScene" uid="uid://cpy7ce1apxwdm" path="res://Scenes/Instances/ShowButton.tscn" id="7_mgmx1"]
+[ext_resource type="PackedScene" uid="uid://c5ewrm74jf2lm" path="res://Scenes/Instances/RestrainedLine.tscn" id="8_xmy2a"]
+
+[node name="CharacterList" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n0345")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tgbdx")
+color_id = "Background"
+
+[node name="ItemList" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="CharacterName" parent="ItemList" instance=ExtResource("3_xgy0k")]
+layout_mode = 2
+
+[node name="Display" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.15
+anchor_right = 0.25
+anchor_bottom = 0.85
+
+[node name="Control" type="Control" parent="Display"]
+layout_mode = 2
+
+[node name="PlayerCard" parent="Display/Control" instance=ExtResource("1_2ocmo")]
+character = ExtResource("2_ho18t")
+
+[node name="Back" parent="." instance=ExtResource("5_y7dx0")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.15
+anchor_bottom = 0.15
+change_scene_id = 1
+button_name = "Back"
+
+[node name="Button" parent="." node_paths=PackedStringArray("display_node") instance=ExtResource("7_mgmx1")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.85
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.15
+display_node = NodePath("../Block")
+button_name = "Create"
+
+[node name="Block" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CreateCharacter" type="Control" parent="Block"]
+layout_mode = 1
+anchor_left = 0.25
+anchor_top = 0.3
+anchor_right = 0.75
+anchor_bottom = 0.7
+
+[node name="Panel" type="Panel" parent="Block/CreateCharacter"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Text" type="Label" parent="Block/CreateCharacter"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.1
+offset_right = 1.0
+offset_bottom = 23.0
+text = "Create your character.
+Enter Character name :"
+vertical_alignment = 1
+
+[node name="RestrainedLine" parent="Block/CreateCharacter" instance=ExtResource("8_xmy2a")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.5
+anchor_right = 0.6
+anchor_bottom = 0.7
+placeholder_text = "Character Name"
+max_length = 15
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+drag_and_drop_selection_enabled = false
+valid_min_chars = 3
+
+[node name="Create" parent="Block/CreateCharacter" instance=ExtResource("5_y7dx0")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7
+anchor_top = 0.5
+anchor_right = 0.9
+anchor_bottom = 0.7
+change_scene = "CharacterCreation"
+button_name = "Create Character"
+disabled = true
+
+[connection signal="validation_update" from="Block/CreateCharacter/RestrainedLine" to="." method="_on_restrained_line_validation_update"]

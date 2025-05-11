@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="R_Race" load_steps=3 format=3 uid="uid://crjtq7m2rvq8t"]
+
+[ext_resource type="Script" uid="uid://dnnhi56g6wkqf" path="res://Classes/Race.gd" id="1_b2ifh"]
+[ext_resource type="Script" uid="uid://d4fmwhk0r2l3t" path="res://Classes/SaveThrowBonus.gd" id="1_rxb3j"]
+
+[resource]
+script = ExtResource("1_b2ifh")
+name = "Tiefling"
+bonuses = Array[ExtResource("1_rxb3j")]([])

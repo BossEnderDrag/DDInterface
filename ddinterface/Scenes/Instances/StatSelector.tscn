@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://semo1c3qnc7a"]
+
+[ext_resource type="Script" uid="uid://bxp81stnutbl" path="res://Codes/Instances/stat_selector.gd" id="1_jgsa8"]
+
+[node name="StatSelector" type="Control"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -710.0
+offset_bottom = -450.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jgsa8")
+
+[node name="Int" type="SpinBox" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+max_value = 20.0
+
+[node name="StatName" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_vertical = 2
+text = "Strenght"
+horizontal_alignment = 1
+vertical_alignment = 1

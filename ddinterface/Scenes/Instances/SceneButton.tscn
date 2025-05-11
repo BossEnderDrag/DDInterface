@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnrs4pxk80evu"]
+
+[ext_resource type="Script" uid="uid://dtvu23y7rxojc" path="res://Codes/Instances/backbutton.gd" id="1_lsquw"]
+
+[node name="Button" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_lsquw")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

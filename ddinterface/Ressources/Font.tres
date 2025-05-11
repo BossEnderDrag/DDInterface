@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dqvobgnhtayu5"]
+
+[sub_resource type="SystemFont" id="SystemFont_a1lcw"]
+font_names = PackedStringArray("Manrope")
+
+[resource]
+font = SubResource("SystemFont_a1lcw")

@@ -1,0 +1,92 @@
+[gd_scene load_steps=5 format=3 uid="uid://bieqberdwp5dh"]
+
+[ext_resource type="Script" uid="uid://c7sf1ga14wqad" path="res://Codes/Menus/Make_Character.gd" id="1_jucej"]
+[ext_resource type="PackedScene" uid="uid://semo1c3qnc7a" path="res://Scenes/Instances/StatSelector.tscn" id="1_oa3km"]
+[ext_resource type="PackedScene" uid="uid://c5ewrm74jf2lm" path="res://Scenes/Instances/RestrainedLine.tscn" id="2_lleum"]
+[ext_resource type="PackedScene" uid="uid://dnrs4pxk80evu" path="res://Scenes/Instances/SceneButton.tscn" id="4_uttbi"]
+
+[node name="MakeCharacter" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jucej")
+
+[node name="Stats" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.2
+anchor_right = 0.5
+anchor_bottom = 0.8
+alignment = 1
+
+[node name="StatSelector" parent="Stats" instance=ExtResource("1_oa3km")]
+layout_mode = 2
+
+[node name="StatSelector2" parent="Stats" instance=ExtResource("1_oa3km")]
+layout_mode = 2
+stat = 1
+
+[node name="StatSelector3" parent="Stats" instance=ExtResource("1_oa3km")]
+layout_mode = 2
+stat = 2
+
+[node name="StatSelector4" parent="Stats" instance=ExtResource("1_oa3km")]
+layout_mode = 2
+stat = 3
+
+[node name="StatSelector5" parent="Stats" instance=ExtResource("1_oa3km")]
+layout_mode = 2
+stat = 4
+
+[node name="StatSelector6" parent="Stats" instance=ExtResource("1_oa3km")]
+layout_mode = 2
+stat = 5
+
+[node name="RestrainedLine" parent="." instance=ExtResource("2_lleum")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = 0.05
+anchor_right = 0.65
+anchor_bottom = 0.15
+placeholder_text = "Character Name"
+max_length = 15
+valid_min_chars = 3
+
+[node name="Races" type="OptionButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.55
+anchor_top = 0.3
+anchor_right = 0.7
+anchor_bottom = 0.35
+
+[node name="Classes" type="OptionButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.75
+anchor_top = 0.3
+anchor_right = 0.9
+anchor_bottom = 0.35
+
+[node name="Back" parent="." instance=ExtResource("4_uttbi")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.15
+anchor_bottom = 0.15
+button_name = "Back"
+
+[node name="Save" parent="." instance=ExtResource("4_uttbi")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.85
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.15
+button_name = "Save"

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="R_Race" load_steps=3 format=3 uid="uid://c7csmsu3v277v"]
+
+[ext_resource type="Script" uid="uid://d4fmwhk0r2l3t" path="res://Classes/SaveThrowBonus.gd" id="1_26eu5"]
+[ext_resource type="Script" uid="uid://dnnhi56g6wkqf" path="res://Classes/Race.gd" id="1_ebxuy"]
+
+[resource]
+script = ExtResource("1_ebxuy")
+name = "Halfling"
+bonuses = Array[ExtResource("1_26eu5")]([])

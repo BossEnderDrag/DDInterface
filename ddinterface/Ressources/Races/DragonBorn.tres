@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="R_Race" load_steps=5 format=3 uid="uid://c2dk2s0i51xo1"]
+
+[ext_resource type="Script" uid="uid://dnnhi56g6wkqf" path="res://Classes/Race.gd" id="1_8wn6s"]
+[ext_resource type="Script" uid="uid://d4fmwhk0r2l3t" path="res://Classes/SaveThrowBonus.gd" id="1_be1p6"]
+
+[sub_resource type="Resource" id="Resource_vdn04"]
+script = ExtResource("1_be1p6")
+bonus = 0
+bonus_points = 2
+
+[sub_resource type="Resource" id="Resource_p14fl"]
+script = ExtResource("1_be1p6")
+bonus = 5
+bonus_points = 1
+
+[resource]
+script = ExtResource("1_8wn6s")
+name = "DragonBorn"
+bonuses = Array[ExtResource("1_be1p6")]([SubResource("Resource_vdn04"), SubResource("Resource_p14fl")])

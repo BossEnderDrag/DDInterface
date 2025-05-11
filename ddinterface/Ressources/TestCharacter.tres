@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="R_Character" load_steps=3 format=3 uid="uid://b8uqw1lq3n62v"]
+
+[ext_resource type="Resource" uid="uid://c2dk2s0i51xo1" path="res://Ressources/Races/DragonBorn.tres" id="1_1i4xm"]
+[ext_resource type="Script" uid="uid://cvai0rl16pvv" path="res://Classes/Character.gd" id="1_ym5ao"]
+
+[resource]
+script = ExtResource("1_ym5ao")
+c_name = "Croqueur"
+c_race = ExtResource("1_1i4xm")

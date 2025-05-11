@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5ewrm74jf2lm"]
+
+[ext_resource type="Script" uid="uid://cxjvoijv670w4" path="res://Codes/Instances/regexinput.gd" id="1_ggfpb"]
+
+[node name="RestrainedLine" type="LineEdit"]
+placeholder_text = "Input"
+max_length = 5
+script = ExtResource("1_ggfpb")
